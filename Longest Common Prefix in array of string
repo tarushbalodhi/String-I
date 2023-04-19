@@ -1,0 +1,23 @@
+string longestCommonPrefix (string arr[], int N)
+    {
+        // algo : 
+        // sort the array of string
+        //     traverse till first word len
+        //          now comparing first word and last
+                    
+        sort(arr, N+arr);
+        
+        string ans = "";
+            for(int j = 0; j < arr[0].length(); j++){
+                
+                string first = arr[0];
+                string last = arr[N-1];
+                    
+                if(first[j] == last[j]) 
+                    ans += first[j];
+                else break;
+            }
+        
+        
+        return ans == "" ? "-1" : ans;
+    }
