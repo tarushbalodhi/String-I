@@ -1,0 +1,31 @@
+
+string encode(string src)
+{     
+  int n = src.size();
+  string s = "";
+  int count = 1;
+  for(int i = 0; i < n; i++) {
+      if(src[i] == src[i+1]){
+          count++;
+      }
+      else{
+          s += src[i] + to_string(count);
+          count = 1;
+      }
+  }
+  return s;
+}     
+
+// 2. method
+//   for(int i = 0; i < n; i++){
+//       int charLen = 1;
+      
+//       while(src[i] == src[i+1] && i < n-1){  
+//               charLen++;
+//               i++;          // to skip same char
+//       }
+      
+//     s.push_back(src[i]);    // diff char
+//     s += to_string(charLen);      
+//   }
+ 
